@@ -548,9 +548,9 @@
         <p class="mb-5">Fii mereu la curent cu cele mai noi tendințe și strategii de marketing! Primește direct în inbox articole, resurse utile și inspirație pentru a-ți dezvolta afacerea. Nu rata noutățile din lumea digitală!</p>
       </div>
       <div class="col-lg-8 col-sm-10 col-12 mx-auto">
-        <form action="#">
+        <form id="newsletterForm">
           <div class="input-wrapper position-relative">
-            <input type="email" class="newsletter-form" id="newsletter" placeholder="Introdu adresa ta de email">
+            <input type="email" class="newsletter-form" id="email" placeholder="Introdu adresa ta de email">
             <button type="submit" value="send" class="btn newsletter-btn">Abonează-te acum</button>
           </div>
         </form>
@@ -560,6 +560,30 @@
   <!-- background shapes -->
   <img class="newsletter-bg-shape left-right-animation" src="images/background-shape/seo-ball-2.png" alt="background-shape">
 </section>
+
+<script>
+  document.getElementById("newsletterForm").onsubmit = function(event) {
+      event.preventDefault(); // Previne trimiterea automată a formularului
+
+      // Colectează datele de intrare
+      const email = document.getElementById("email").value;
+
+      // Trimiterea datelor către Google Apps Script
+      fetch("https://script.google.com/macros/s/AKfycbwBPmLox0XPdP3sr-1LUyMnH0GDdDZGWWOuIL_iMSOS2N7kYavi5o9TXbv7H-DGZPCBuw/exec", {
+          method: "POST",
+          body: JSON.stringify({ email: email }),
+          headers: { "Content-Type": "application/json" }
+      })
+      .then(response => response.json())
+      .then(data => {
+          alert(data.message || "You have successfully subscribed!");
+      })
+      .catch(error => {
+          console.error("Error:", error);
+      });
+  };
+</script>
+
 <!-- /newsletter -->
 
 <!-- footer -->
