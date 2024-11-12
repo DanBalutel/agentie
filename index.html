@@ -562,26 +562,26 @@
 </section>
 
 <script>
-  document.getElementById("newsletterForm").onsubmit = function(event) {
-      event.preventDefault(); // Previne trimiterea automată a formularului
+        document.getElementById("newsletterForm").onsubmit = function(event) {
+            event.preventDefault(); // Previne trimiterea automată a formularului
 
-      // Colectează datele de intrare
-      const email = document.getElementById("email").value;
+            // Colectează datele de intrare
+            const email = document.getElementById("email").value;
 
-      // Trimiterea datelor către Google Apps Script
-      fetch("https://script.google.com/macros/s/AKfycbwBPmLox0XPdP3sr-1LUyMnH0GDdDZGWWOuIL_iMSOS2N7kYavi5o9TXbv7H-DGZPCBuw/exec", {
-          method: "POST",
-          body: JSON.stringify({ email: email }),
-          headers: { "Content-Type": "application/json" }
-      })
-      .then(response => response.json())
-      .then(data => {
-          alert(data.message || "You have successfully subscribed!");
-      })
-      .catch(error => {
-          console.error("Error:", error);
-      });
-  };
+            // Trimiterea datelor către Google Apps Script
+            fetch("https://kinetoechilibru.ro/proxy.php?url=https://script.google.com/macros/s/AKfycbwiiFtQdY5swHWTaiVym7ObuBPiJ-ZOUa_-LNBeECTNhukQnPCM2dfQKbwIBPjVaRjy0Q/exec", {
+                method: "POST",
+                body: JSON.stringify({ email: email }),
+                headers: { "Content-Type": "application/json" }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || "You have successfully subscribed!");
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        };
 </script>
 
 <!-- /newsletter -->
