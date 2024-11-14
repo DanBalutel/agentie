@@ -41,3 +41,7 @@ ul {
 .show {
     display: flex;
 }
+
+a.btn.btn-secondary.btn-lg {
+  text-wrap: pretty;
+}
