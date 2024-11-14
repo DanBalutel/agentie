@@ -45,3 +45,9 @@ ul {
 a.btn.btn-secondary.btn-lg {
   text-wrap: pretty;
 }
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
