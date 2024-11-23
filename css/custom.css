@@ -43,7 +43,7 @@ ul {
 }
 
 a.btn.btn-secondary.btn-lg {
-  text-wrap: pretty;
+  text-wrap: wrap;
 }
 
 .project {
