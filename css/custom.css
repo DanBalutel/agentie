@@ -51,3 +51,8 @@ a.btn.btn-secondary.btn-lg {
   flex-direction: column;
   justify-content: center;
 }
+
+a.navbar-brand>img {
+  width: 130px;
+  border-radius: 1rem;
+}
